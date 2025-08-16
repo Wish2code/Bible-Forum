@@ -1,18 +1,28 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { supabase } from '../supabase/supabaseClient';
+import { supabase, isSupabaseConfigured } from '../supabase/supabaseClient';
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [sortOption, setSortOption] = useState('newest'); // 'newest' or 'top'
   const [selectedTag, setSelectedTag] = useState('all'); // <-- Move here!
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchPosts();
+    if (isSupabaseConfigured) {
+      fetchPosts();
+    } else {
+      setLoading(false);
+    }
   }, [sortOption]);
 
   async function fetchPosts() {
+    if (!isSupabaseConfigured) {
+      setLoading(false);
+      return;
+    }
+
     const sortBy = sortOption === 'top' ? 'upvotes' : 'created_at';
     const { data, error } = await supabase
       .from('posts')
@@ -24,6 +34,7 @@ export default function Home() {
     } else {
       setPosts(data);
     }
+    setLoading(false);
   }
 
   const filteredPosts = posts
@@ -34,10 +45,46 @@ export default function Home() {
     selectedTag === 'all' ? true : post.tag === selectedTag
   );
 
+  if (!isSupabaseConfigured) {
+    return (
+      <div className="container">
+        <h1>⚽ Soccer Forum</h1>
+        <div style={{ 
+          padding: '20px', 
+          backgroundColor: '#fff3cd', 
+          border: '1px solid #ffeaa7', 
+          borderRadius: '8px',
+          marginBottom: '20px'
+        }}>
+          <h3>⚠️ Setup Required</h3>
+          <p>To use this Soccer Forum, you need to configure Supabase:</p>
+          <ol>
+            <li>Create a Supabase project at <a href="https://supabase.com" target="_blank" rel="noopener noreferrer">supabase.com</a></li>
+            <li>Create a <code>.env</code> file in the project root with:</li>
+            <pre style={{ backgroundColor: '#f8f9fa', padding: '10px', borderRadius: '4px' }}>
+{`VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key`}
+            </pre>
+            <li>Create the required database tables (posts, comments)</li>
+            <li>Restart the development server</li>
+          </ol>
+        </div>
+      </div>
+    );
+  }
+
+  if (loading) {
+    return (
+      <div className="container">
+        <h1>⚽ Soccer Forum</h1>
+        <p>Loading posts...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="container">
-      <h1>🕊️ BibleVerse Forum</h1>
+      <h1>⚽ Soccer Forum</h1>
 
       <div style={{ marginBottom: '20px' }}>
         <input
@@ -54,10 +101,11 @@ export default function Home() {
             style={{ padding: '8px', marginLeft: '10px' }}
             >
             <option value="all">🏷️ All Tags</option>
-            <option value="Testimony">✨ Testimony</option>
-            <option value="Question">❓ Question</option>
-            <option value="Prayer Request">🙏 Prayer Request</option>
-            <option value="Reflection">💭 Reflection</option>
+            <option value="Match Discussion">⚽ Match Discussion</option>
+            <option value="Transfer News">🔄 Transfer News</option>
+            <option value="Player Analysis">👤 Player Analysis</option>
+            <option value="Tactics">📋 Tactics</option>
+            <option value="Fantasy League">🏆 Fantasy League</option>
             <option value="Other">📌 Other</option>
         </select>
 

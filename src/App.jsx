@@ -8,7 +8,7 @@ export default function App() {
   return (
     <div>
       <nav>
-        <Link to="/">BibleVerse Forum</Link>
+        <Link to="/">⚽ Soccer Forum</Link>
         <Link to="/create">New Post</Link>
       </nav>
 

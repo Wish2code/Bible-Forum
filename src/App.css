@@ -1,7 +1,7 @@
 /* Reset and base styles */
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: #f7f8fa;
+  background: #f0f8f0;
   color: #222;
   margin: 0;
   padding: 0;
@@ -15,7 +15,7 @@ body {
 
 /* Navigation bar */
 nav {
-  background: #3b5998;
+  background: #2d5a2d;
   color: #fff;
   padding: 18px 32px;
   font-size: 1.2rem;
@@ -36,7 +36,7 @@ nav a {
   transition: color 0.2s;
 }
 nav a:hover {
-  color: #ffd700;
+  color: #90ee90;
 }
 
 /* Container for pages */
@@ -44,13 +44,13 @@ nav a:hover {
   background: #fff;
   padding: 32px 28px;
   border-radius: 12px;
-  box-shadow: 0 2px 16px rgba(60,60,60,0.08);
+  box-shadow: 0 2px 16px rgba(45,90,45,0.08);
   margin-bottom: 32px;
 }
 
 /* Headings */
 h1, h2, h3 {
-  color: #3b5998;
+  color: #2d5a2d;
   margin-bottom: 10px;
 }
 
@@ -65,11 +65,11 @@ input, textarea, select, button {
 }
 
 input:focus, textarea:focus, select:focus {
-  border: 1.5px solid #3b5998;
+  border: 1.5px solid #2d5a2d;
 }
 
 button {
-  background: #3b5998;
+  background: #2d5a2d;
   color: #fff;
   border: none;
   padding: 8px 18px;
@@ -79,21 +79,21 @@ button {
   transition: background 0.2s;
 }
 button:hover {
-  background: #29487d;
+  background: #1e3d1e;
 }
 
 /* Post card styles */
 .post-card {
   border: 1px solid #e0e0e0;
-  background: #fafbfc;
+  background: #f8fff8;
   border-radius: 10px;
   margin-bottom: 18px;
   padding: 18px 16px;
   transition: box-shadow 0.2s, border-color 0.2s;
 }
 .post-card:hover {
-  box-shadow: 0 2px 8px rgba(60,60,60,0.10);
-  border-color: #b6c6e0;
+  box-shadow: 0 2px 8px rgba(45,90,45,0.10);
+  border-color: #90ee90;
 }
 
 .post-card h3 {
@@ -110,12 +110,12 @@ img {
   border-radius: 8px;
   max-width: 100%;
   margin: 10px 0;
-  box-shadow: 0 1px 6px rgba(60,60,60,0.07);
+  box-shadow: 0 1px 6px rgba(45,90,45,0.07);
 }
 
 /* Comments */
 .comment {
-  background: #f3f6fa;
+  background: #f0f8f0;
   border-radius: 7px;
   padding: 10px 14px;
   margin-bottom: 10px;

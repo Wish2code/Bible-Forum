@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { supabase } from '../supabase/supabaseClient';
+import { supabase, isSupabaseConfigured } from '../supabase/supabaseClient';
 import { v4 as uuidv4 } from 'uuid'; // for unique filenames
 
 export default function CreatePost() {
@@ -12,6 +12,24 @@ export default function CreatePost() {
   const [tag, setTag] = useState('');
   const [secretKey, setSecretKey] = useState('');
   const [error, setError] = useState(null);
+
+  if (!isSupabaseConfigured) {
+    return (
+      <div style={{ padding: '20px' }}>
+        <h2>Create a New Soccer Post ⚽</h2>
+        <div style={{ 
+          padding: '20px', 
+          backgroundColor: '#fff3cd', 
+          border: '1px solid #ffeaa7', 
+          borderRadius: '8px'
+        }}>
+          <h3>⚠️ Setup Required</h3>
+          <p>Supabase is not configured. Please set up your environment variables to create posts.</p>
+          <button onClick={() => navigate('/')}>← Back to Home</button>
+        </div>
+      </div>
+    );
+  }
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -70,7 +88,7 @@ export default function CreatePost() {
 
   return (
     <div style={{ padding: '20px' }}>
-      <h2>Create a New BibleVerse Post ✨</h2>
+      <h2>Create a New Soccer Post ⚽</h2>
 
       {error && <p style={{ color: 'red' }}>{error}</p>}
 
@@ -113,10 +131,11 @@ export default function CreatePost() {
             style={{ width: '100%', padding: '8px' }}
           >
             <option value="">-- Select a tag --</option>
-            <option value="Question">Question</option>
-            <option value="Reflection">Reflection</option>
-            <option value="Testimony">Testimony</option>
-            <option value="Prayer Request">Prayer Request</option>
+            <option value="Match Discussion">Match Discussion</option>
+            <option value="Transfer News">Transfer News</option>
+            <option value="Player Analysis">Player Analysis</option>
+            <option value="Tactics">Tactics</option>
+            <option value="Fantasy League">Fantasy League</option>
             <option value="Other">Other</option>
           </select>
         </div>

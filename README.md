@@ -1,8 +1,8 @@
-# Web Development Final Project - BibleVerse Forum
+# Web Development Final Project - Soccer Forum
 
 Submitted by: **Ngaatendwe Dumbarimwe**
 
-This web app: **is a community forum for sharing, discussing, and reflecting on Bible verses, testimonies, questions, prayer requests, and more. Users can create posts, comment, upvote, and interact with others in a safe, faith-based environment.**
+This web app: **is a community forum for sharing, discussing, and analyzing soccer matches, transfer news, player performances, tactics, and fantasy league strategies. Users can create posts, comment, upvote, and interact with others in a passionate soccer community environment.**
 
 Time spent: ** 5 hours spent in total**
 
@@ -51,7 +51,7 @@ The following **optional** features are implemented:
   - For both options, only the original user author of a post can update or delete it
 - [x] Users can add more characterics to their posts
   - Users can share and view web videos
-  - Users can set flags such as "Question" or "Opinion" while creating a post
+  - Users can set flags such as "Match Discussion" or "Transfer News" while creating a post
   - Users can filter posts by flags on the home feed
   - Users can upload images directly from their local machine as an image file
 - [x] Web app displays a loading animation whenever data is being fetched

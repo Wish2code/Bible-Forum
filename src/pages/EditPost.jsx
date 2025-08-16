@@ -102,10 +102,11 @@ export default function EditPost() {
             style={{ width: '100%', padding: '8px' }}
           >
             <option value="">-- Select --</option>
-            <option value="Question">Question</option>
-            <option value="Reflection">Reflection</option>
-            <option value="Testimony">Testimony</option>
-            <option value="Prayer Request">Prayer Request</option>
+            <option value="Match Discussion">Match Discussion</option>
+            <option value="Transfer News">Transfer News</option>
+            <option value="Player Analysis">Player Analysis</option>
+            <option value="Tactics">Tactics</option>
+            <option value="Fantasy League">Fantasy League</option>
             <option value="Other">Other</option>
           </select>
         </div>
