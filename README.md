@@ -1,85 +1,63 @@
-# Web Development Final Project - Soccer Forum
+# Soccer Forum
 
-Submitted by: **Ngaatendwe Dumbarimwe**
+A community forum for soccer enthusiasts to share, discuss, and analyze matches, transfer news, player performances, tactics, and fantasy league strategies.
 
-This web app: **is a community forum for sharing, discussing, and analyzing soccer matches, transfer news, player performances, tactics, and fantasy league strategies. Users can create posts, comment, upvote, and interact with others in a passionate soccer community environment.**
+## Features
 
-Time spent: ** 5 hours spent in total**
+-  Create and edit posts with rich content
+-  Browse posts with search and filtering
+-  Comment on posts and engage with the community
+-  Upvote your favorite content
+-  Organize posts with categories (Match Discussion, Transfer News, etc.)
+-  Support for images and videos
+-  Secure post management with secret keys
 
-## Required Features
+## Tech Stack
 
-The following **required** functionality is completed:
+- React 19.1.0
+- Vite 7.0.4
+- Supabase (PostgreSQL + Real-time)
+- React Router DOM
 
+## Getting Started
 
-- [x] **Web app includes a create form that allows the user to create posts**
-  - Form requires users to add a post title
-  - Forms should have the *option* for users to add: 
-    - additional textual content
-    - an image added as an external image URL
-- [x] **Web app includes a home feed displaying previously created posts**
-  - Web app must include home feed displaying previously created posts
-  - By default, each post on the posts feed should show only the post's:
-    - creation time
-    - title 
-    - upvotes count
-  - Clicking on a post should direct the user to a new page for the selected post
-- [x] **Users can view posts in different ways**
-  - Users can sort posts by either:
-    -  creation time
-    -  upvotes count
-  - Users can search for posts by title
-- [x] **Users can interact with each post in different ways**
-  - The app includes a separate post page for each created post when clicked, where any additional information is shown, including:
-    - content
-    - image
-    - comments
-  - Users can leave comments underneath a post on the post page
-  - Each post includes an upvote button on the post page. 
-    - Each click increases the post's upvotes count by one
-    - Users can upvote any post any number of times
+### Prerequisites
 
-- [x] **A post that a user previously created can be edited or deleted from its post pages**
-  - After a user creates a new post, they can go back and edit the post
-  - A previously created post can be deleted from its post page
+- Node.js (v18 or higher)
+- Supabase account
 
-The following **optional** features are implemented:
+### Installation
 
+1. Clone the repository
+   ```bash
+   git clone https://github.com/yourusername/soccer-forum.git
+   cd soccer-forum
+   ```
 
-- [x] Web app implements pseudo-authentication
-  - Users can only edit and delete posts or delete comments by entering the secret key, which is set by the user during post creation
-  - **or** upon launching the web app, the user is assigned a random user ID. It will be associated with all posts and comments that they make and displayed on them
-  - For both options, only the original user author of a post can update or delete it
-- [x] Users can add more characterics to their posts
-  - Users can share and view web videos
-  - Users can set flags such as "Match Discussion" or "Transfer News" while creating a post
-  - Users can filter posts by flags on the home feed
-  - Users can upload images directly from their local machine as an image file
-- [x] Web app displays a loading animation whenever data is being fetched
+2. Install dependencies
+   ```bash
+   npm install
+   ```
 
-## Video Walkthrough
+3. Set up environment variables
+   Create a `.env` file in the root directory:
+   ```env
+   VITE_SUPABASE_URL=your_supabase_project_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
 
-Here's a walkthrough of implemented user stories:
+4. Start the development server
+   ```bash
+   npm run dev
+   ```
 
-<img src='/src/assets/Untitled video - Made with Clipchamp (7).gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-<!-- Replace this with whatever GIF tool you used! -->
-GIF created with:
-
-- FreeConvert (www.freeconvert.com) 
+5. Open your browser and navigate to `http://localhost:5173`
 
 
 ## License
 
-    Copyright [2025] [Ngaatendwe Dumbarimwe]
+This project is licensed under the Apache License 2.0.
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+## Author
 
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+**Ngaatendwe Dumbarimwe**
